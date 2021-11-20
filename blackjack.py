@@ -10,3 +10,6 @@ baraja = {**picas, **corazones, **rombos, **treboles}
 print("Cartas {}:".format(" ".join(baraja.keys())))
 print("Valores de las cartas {}".format(list(baraja.values())))
 
+for carta, valor in corazones.items():
+    print("Las cartas {} {} valen {}".format(carta, carta ,valor))
+
