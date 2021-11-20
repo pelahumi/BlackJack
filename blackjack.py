@@ -30,40 +30,50 @@ score_jugador += baraja[carta_jugador2]
 print(carta_jugador2, end=" ")
 print("Su puntuación es de: ", score_jugador)
 
+#Mano del casino
+
+print("La mano del casino:", end=" ")
+carta_casino1 = choice(lista_baraja)
+score_casino1 = baraja[carta_casino1]
+print(carta_casino1, end=" ")
+carta_casino_oculta = chr(0x1f0a0)
+print(carta_casino_oculta, end=" ")
+print("La puntuación del casino es de: ", score_casino1)
+
+#Elección de la tercera carta
+
 def pedir_tercera_carta ():
-    opcion = int(input("Introduce 1 si quieres otra carta, si no 0: "))
-    while opcion != 1 or 0:
-        print("Error introduzca 1 o 0: ")
-        opcion = int(input("Introduce 1 si quieres otra carta, si no 0: "))
+    opcion = int(input("Introduce 1 si quieres otra carta, si no 2: "))
+    while opcion != 1 or opcion != 2:
+        print("Error introduzca 1 o 2: ")
+        opcion = int(input("Introduce 1 si quieres otra carta, si no 2: "))
     if opcion == 1:
         carta_jugador3 = choice(lista_baraja)
         score_jugador2 = score_jugador + baraja[carta_jugador3]
         print("Sus cartas son: ", carta_jugador1, carta_jugador2, carta_jugador3, end=" ")
         print("Su nueva puntuación es de: ",score_jugador2)
-    if opcion == 0:
+    if opcion == 2:
+        print("Sus cartas son: ", carta_jugador1, carta_jugador2)
         print("Su puntuación es de: ", score_jugador)
 
 
 opcion = pedir_tercera_carta()
 
-#Mano del casino
+#El casino descubre su carta oculta
 
-print("La mano del casino:", end=" ")
-carta_casino = choice(lista_baraja)
-score_casino = baraja[carta_casino]
-print(carta_casino, end=" ")
-carta_casino = choice(lista_baraja)
-score_casino += baraja[carta_casino]
-print(carta_casino, end=" ")
-print("La puntuación del casino es de: ", score_casino)
+print("La mano del casino es: ", end=" ")
+carta_casino2 = choice(lista_baraja)
+score_casino2 = score_casino1 + baraja[carta_casino2]
+print(carta_casino1, carta_casino2)
+print("La puntuación del casino es de: ", score_casino2)
+
+
+#Ganador
 
 if score_jugador > 21:
     print("Has perdido")
 if score_casino > 21:
     print("Ganaste la mano")
-
-
-#Ganador
 
 while score_jugador != score_casino:
     if score_jugador > score_casino:
