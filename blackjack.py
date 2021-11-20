@@ -21,7 +21,7 @@ lista_baraja = list(baraja)
 
 #Mano del jugador
 
-print("Sus cartas:", end=" ")
+print("Su mano es:", end=" ")
 carta_jugador = choice(lista_baraja)
 score_jugador = baraja[carta_jugador]
 print(carta_jugador, end=" ")
@@ -50,6 +50,10 @@ while score_jugador != score_casino:
         print("Perdiste la mano")
     if score_jugador == score_casino:
         print("Empate, no hay ganador")
+    if score_jugador > 21:
+        print("Perdiste la mano")
+    if score_casino > 21:
+        print("Ganaste la mano")
     break
 
 
