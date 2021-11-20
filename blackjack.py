@@ -11,5 +11,14 @@ print("Cartas {}:".format(" ".join(baraja.keys())))
 print("Valores de las cartas {}".format(list(baraja.values())))
 
 for carta, valor in corazones.items():
-    print("Las cartas {} {} valen {}".format(carta, carta ,valor))
+    print("Las cartas {} valen {}".format(carta, valor))
 
+lista_baraja = list(baraja)
+print("Sus cartas:", end=" ")
+carta_jugador = choice(lista_baraja)
+score = baraja[carta_jugador]
+print(carta_jugador, end=" ")
+carta_jugador = choice(lista_baraja)
+score += baraja[carta_jugador]
+print(carta_jugador, end=" ")
+print("Puntuación total: ", score)
