@@ -32,13 +32,17 @@ print("Su puntuación es de: ", score_jugador)
 
 def pedir_tercera_carta ():
     opcion = int(input("Introduce 1 si quieres otra carta, si no 0: "))
+    while opcion != 1 or 0:
+        print("Error introduzca 1 o 0: ")
+        opcion = int(input("Introduce 1 si quieres otra carta, si no 0: "))
     if opcion == 1:
         carta_jugador3 = choice(lista_baraja)
         score_jugador2 = score_jugador + baraja[carta_jugador3]
         print("Sus cartas son: ", carta_jugador1, carta_jugador2, carta_jugador3, end=" ")
         print("Su nueva puntuación es de: ",score_jugador2)
-    else:
+    if opcion == 0:
         print("Su puntuación es de: ", score_jugador)
+
 
 opcion = pedir_tercera_carta()
 
@@ -55,24 +59,8 @@ print("La puntuación del casino es de: ", score_casino)
 
 if score_jugador > 21:
     print("Has perdido")
-
-def pedir_tercera_carta ():
-    opcion = int(input("Introduce 1 si quieres otra carta, si no 0: "))
-    if opcion == 1:
-        carta_jugador = choice(lista_baraja)
-        score_jugador += baraja[carta_jugador]
-    else:
-        print("Su puntuación es de: ", score_jugador)
-
-
-
-
-
-
-
-
-
-
+if score_casino > 21:
+    print("Ganaste la mano")
 
 
 #Ganador
