@@ -44,9 +44,10 @@ print("La puntuación del casino es de: ", score_casino1)
 
 def pedir_tercera_carta ():
     opcion = int(input("Introduce 1 si quieres otra carta, si no 2: "))
-    while opcion != 1 or opcion != 2:
+    while opcion < 1 or opcion > 2:
         print("Error introduzca 1 o 2: ")
         opcion = int(input("Introduce 1 si quieres otra carta, si no 2: "))
+        break
     if opcion == 1:
         carta_jugador3 = choice(lista_baraja)
         score_jugador2 = score_jugador + baraja[carta_jugador3]
