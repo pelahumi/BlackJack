@@ -56,38 +56,50 @@ def pedir_tercera_carta ():
     if opcion == 2:
         print("Sus cartas son: ", carta_jugador1, carta_jugador2)
         print("Su puntuación es de: ", score_jugador)
+    
+    #El casino descubre su carta oculta
+
+    print("La mano del casino es: ", end=" ")
+    carta_casino2 = choice(lista_baraja)
+    score_casino2 = score_casino1 + baraja[carta_casino2]
+    print(carta_casino1, carta_casino2)
+    print("La puntuación del casino es de: ", score_casino2)
+
+    #Tercera carta del casino
+
+    if score_jugador > 21:
+            print("La banca gana")
+    else:    
+        while score_casino2 < 14:   
+            carta_casino3 = choice(lista_baraja)
+            score_casino3 = score_casino2 + baraja[carta_casino3]
+            print("Las cartas del casino son: ", carta_casino1, carta_casino2, carta_casino3)
+            print("La puntuación del casino es: ", score_casino3)
+            break
+
+    #Ganador
+
+    while score_jugador2 != score_casino2:
+        if score_jugador2 == 21:
+            print("Ganaste la mano")
+        if score_casino2 == 21:
+            print("La banca gana")
+        if score_jugador > score_casino2:
+            print("Ganaste la mano")
+        if score_jugador2 < score_casino2:
+            print("Perdiste la mano")
+        if score_jugador2 == score_casino2:
+            print("Empate, no hay ganador")
+        if score_jugador2 > 21:
+            print("Perdiste la mano")
+        if score_casino2 > 21:
+            print("Ganaste la mano")
+        break
 
 
 opcion = pedir_tercera_carta()
 
-#El casino descubre su carta oculta
 
-print("La mano del casino es: ", end=" ")
-carta_casino2 = choice(lista_baraja)
-score_casino2 = score_casino1 + baraja[carta_casino2]
-print(carta_casino1, carta_casino2)
-print("La puntuación del casino es de: ", score_casino2)
-
-
-#Ganador
-
-if score_jugador > 21:
-    print("Has perdido")
-if score_casino > 21:
-    print("Ganaste la mano")
-
-while score_jugador != score_casino:
-    if score_jugador > score_casino:
-        print("Ganaste la mano")
-    if score_jugador < score_casino:
-        print("Perdiste la mano")
-    if score_jugador == score_casino:
-        print("Empate, no hay ganador")
-    if score_jugador > 21:
-        print("Perdiste la mano")
-    if score_casino > 21:
-        print("Ganaste la mano")
-    break
 
 
 
