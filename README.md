@@ -7,9 +7,9 @@ En este ejercicio hemos creado un programa que simula el clásico juego del Blac
 
 El código del programa es el siguiente:
 
-´´from random import choice, sample
+´´(from random import choice, sample
 
-#Baraja
+´#Baraja
 
 picas = {chr(0x1f0a1): 11, chr(0x1f0a2): 2, chr(0x1f0a3): 3, chr(0x1f0a4): 4, chr(0x1f0a5): 5, chr(0x1f0a6): 6, chr(0x1f0a7): 7, chr(0x1f0a8): 8, chr(0x1f0a9): 9, chr(0x1f0aa): 10, chr(0X1f0ab): 10, chr(0x1f0ad): 10, chr(0x1f0ae): 10}
 corazones = {chr(0x1f0b1): 11, chr(0x1f0b2): 2, chr(0x1f0b3): 3, chr(0x1f0b4): 4, chr(0x1f0b5): 5, chr(0x1f0b6): 6, chr(0x1f0b7): 7, chr(0x1f0b8): 8, chr(0x1f0b9): 9, chr(0x1f0ba): 10, chr(0X1f0bb): 10, chr(0x1f0bd): 10, chr(0x1f0be): 10}
@@ -119,4 +119,4 @@ def pedir_tercera_carta ():
                             print("Empate, no hay ganador")
 
 
-opcion = pedir_tercera_carta()
+opcion = pedir_tercera_carta())
