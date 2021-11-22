@@ -4,6 +4,9 @@ https://github.com/pelahumi/BlackJack
 
 En este ejercicio hemos creado un programa que simula el clásico juego del BlackJack.
 
+El diagrama de flujo es el siguiente:
+
+
 
 El código del programa es el siguiente:
 
