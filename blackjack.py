@@ -76,9 +76,9 @@ def pedir_tercera_carta ():
                             print("Ganaste")
                         if score_jugador2 < score_casino2:
                             print("La banca gana")
-                            break
                         else:
                             print("Empate, no hay ganador")
+                        break
                 
     if opcion == 2:
         print("Sus cartas son: ", carta_jugador1, carta_jugador2)
@@ -105,9 +105,9 @@ def pedir_tercera_carta ():
                             print("Ganaste")
                         if score_jugador < score_casino2:
                             print("La banca gana")
-                            break
                         else:
                             print("Empate, no hay ganador")
+                        break
 
 
 opcion = pedir_tercera_carta()
